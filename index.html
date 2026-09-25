@@ -19,12 +19,12 @@
 
 
       <nav>        
-        <a href="#interactive_elements">Interactive Elements</a>
-        <a href="#text_elements">Text Elements</a>
-        <a href="#combined_elements">Combined Elements</a>
-        <a href="product_listing.html">Product Listing Template</a>
-        <a href="checkout.html">Checkout Template</a>
-        <a href="#citations">Citations</a>
+        <li><a href="#interactive_elements">Interactive Elements</a></li>
+        <li><a href="#text_elements">Text Elements</a></li>
+        <li><a href="#combined_elements">Combined Elements</a></li>
+        <li><a href="product_listing.html">Product Listing Template</a></li>
+        <li><a href="checkout.html">Checkout Template</a></li>
+        <li><a href="#citations">Citations</a></li>
       </nav>
 
 
@@ -145,14 +145,46 @@
 
       <section class="element">
         <h3>Headings</h3>
+
+        <h1>H1 Heading</h1>
+        <h2>H2 Heading</h2>
+        <h3>H3 Heading</h3>
+        <h4>H4 Heading</h4>
+        <h5>H5 Heading</h5>
+
+        <h4>Sample code:</h4>
+        <code>&lt;h1&gt;H1 Heading&lt;/h1&gt;<br>
+        &lt;h2&gt;H2 Heading&lt;/h2&gt;<br>
+        &lt;h3&gt;H3 Heading&lt;/h3&gt;<br>
+        &lt;h4&gt;H4 Heading&lt;/h4&gt;<br>
+        &lt;h5&gt;H5 Heading&lt;/h5&gt;</code>
+
       </section>
 
       <section class="element">
         <h3>Paragraphs</h3>
+
+        <h4>Sample code:</h4>
+        <code>&lt;p&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+        &lt;/p&gt;</code>
       </section>
 
       <section class="element">
         <h3>Numbered Lists</h3>
+
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ol>
+
+        <h4>Sample code:</h4>
+      <code>&lt;ol&gt;<br>
+      &lt;li&gt;1&lt;/li&gt;<br>
+      &lt;li&gt;2&lt;/li&gt;<br>
+      &lt;li&gt;3&lt;/li&gt;<br>
+      &lt;/ol&gt;</code>
       </section>
 
     </section>
@@ -166,18 +198,255 @@
 
       <section class="element">
         <h3>Main Navigation</h3>
+
+          <nav>
+            <ul>
+              <li><a href="#products">Home</a></li>
+              <li><a href="#games">games</a></li>
+              <li><a href="#about-us">About Us</a></li>
+              <li><a href="#about-us">Career</a></li>
+              <li>
+                  <fieldset>
+                    <label>
+                      Search:
+                      <input type="search" id="search" placeholder="Search">
+                    </label>
+                  </fieldset>
+              </li>
+              <li><a href="#cart">Cart</a></li>
+            </ul>
+
+        </nav>
+
+        <h4>Sample code:</h4>
+        <code>&lt;nav&gt;<br>
+        &lt;ul&gt;<br>
+        &lt;li&gt;&lt;a href="#products"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+        &lt;li&gt;&lt;a href="#games"&gt;games&lt;/a&gt;&lt;/li&gt;<br>
+        &lt;li&gt;&lt;a href="#about-us"&gt;About Us&lt;/a&gt;&lt;/li&gt;<br>
+        &lt;li&gt;&lt;a href="#about-us"&gt;Career&lt;/a&gt;&lt;/li&gt;<br>
+        &lt;li&gt;<br>
+        &lt;fieldset&gt;<br>
+        &lt;label&gt;<br>
+        Search:<br>
+        &lt;input type="search" id="search" placeholder="Search"&gt;<br>
+        &lt;/label&gt;<br>
+        &lt;/fieldset&gt;<br>
+        &lt;/li&gt;<br>
+        &lt;li&gt;&lt;a href="#cart"&gt;Cart&lt;/a&gt;&lt;/li&gt;<br>
+        &lt;/ul&gt;<br>
+        &lt;/nav&gt;</code>
       </section>
 
       <section class="element">
-        <h3>Product/Service Listing</h3>
+        <h3>Product/game Listing</h3>
+
+        <article id="games">
+          <li>
+          <h4 id="game-name">Game 1</h4>
+          <h5 id="brief-description">Description</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          </p>
+          <a href="#game-details">
+          <img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100">
+          </a>
+          <p>Price: <data value="100.00">$100.00</data></p>
+          <p><a href="#game-details">See game details.</a></p>
+          </li>
+          <li>
+          <h4 id="game-name">Game 2</h4>
+          <h5 id="brief-description">Description</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          </p>
+          <a href="#game-details">
+            <img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100">
+          </a>
+          <p>Price: <data value="100.00">$100.00</data></p>
+          <p><a href="#game-details">See game details.</a></p>
+          </li>
+
+        </article>
+
+
+        <h4>Sample code:</h4>
+        <code>&lt;article id="games"&gt;<br>
+        &lt;li&gt;<br>
+        &lt;h4 id="game-name"&gt;Game 1&lt;/h4&gt;<br>
+        &lt;h5 id="brief-description"&gt;Description&lt;/h5&gt;<br>
+        &lt;p&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+        &lt;/p&gt;<br>
+        &lt;a href="#game-details"&gt;<br>
+        &lt;img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"&gt;<br>
+        &lt;/a&gt;<br>
+        &lt;p&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;<br>
+        &lt;p&gt;&lt;a href="#game-details"&gt;See game details.&lt;/a&gt;&lt;/p&gt;<br>
+        &lt;/li&gt;<br>
+        &lt;li&gt;<br>
+        &lt;h4 id="game-name"&gt;Game 2&lt;/h4&gt;<br>
+        &lt;h5 id="brief-description"&gt;Description&lt;/h5&gt;<br>
+        &lt;p&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+        &lt;/p&gt;<br>
+        &lt;a href="#game-details"&gt;<br>
+        &lt;img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"&gt;<br>
+        &lt;/a&gt;<br>
+        &lt;p&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;<br>
+        &lt;p&gt;&lt;a href="#game-details"&gt;See game details.&lt;/a&gt;&lt;/p&gt;<br>
+        &lt;/li&gt;<br>
+        &lt;/article&gt;</code>
       </section>
 
       <section class="element">
         <h3>Payment Form</h3>
+
+        
+        <form id="payment">
+          <fieldset>
+            <legend>payment form</legend>
+            <div>
+              <label for="customer-name">Full name</label>
+              <input id="customer-name" name="name" type="text">
+            </div>
+            <div>
+              <label for="customer-email">Email address</label>
+              <input id="customer-email" name="email" type="email">
+            </div>
+            <div>
+              <label for="customer-address-state">State/Province</label>
+              <input id="customer-address-state" name="address" type="adress">
+            </div>
+            <div>
+              <label for="customer-address-postal">Post code</label>
+              <input id="customer-address-postal" name="address" type="adress">
+            </div>
+            <fieldset>
+              <legend>Payment method</legend>
+              <div>
+                <input id="pay-card" name="payment-method" type="radio" value="card">
+                <label for="pay-card">Credit Card</label>
+              </div>
+              <div>
+                <input id="pay-google" name="payment-method" type="radio" value="googlepay">
+                <label for="pay-google">Google Pay</label>
+              </div>
+            </fieldset>
+            <button type="submit">Place order</button>
+          </fieldset>
+        </form>
+
+
+        <h4>Sample code:</h4>
+        <code>&lt;form id="payment"&gt;<br>
+        &lt;fieldset&gt;<br>
+        &lt;legend&gt;payment form&lt;/legend&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for="customer-name"&gt;Full name&lt;/label&gt;<br>
+        &lt;input id="customer-name" name="name" type="text"&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for="customer-email"&gt;Email address&lt;/label&gt;<br>
+        &lt;input id="customer-email" name="email" type="email"&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for="customer-address-state"&gt;State/Province&lt;/label&gt;<br>
+        &lt;input id="customer-address-state" name="address" type="adress"&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for="customer-address-postal"&gt;Post code&lt;/label&gt;<br>
+        &lt;input id="customer-address-postal" name="address" type="adress"&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;fieldset&gt;<br>
+        &lt;legend&gt;Payment method&lt;/legend&gt;<br>
+        &lt;div&gt;<br>
+        &lt;input id="pay-card" name="payment-method" type="radio" value="card"&gt;<br>
+        &lt;label for="pay-card"&gt;Credit Card&lt;/label&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;input id="pay-google" name="payment-method" type="radio" value="googlepay"&gt;<br>
+        &lt;label for="pay-google"&gt;Google Pay&lt;/label&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;/fieldset&gt;<br>
+        &lt;button type="submit"&gt;Place order&lt;/button&gt;<br>
+        &lt;/fieldset&gt;<br>
+        &lt;/form&gt;</code>
       </section>
 
       <section class="element">
         <h3>Checkout Cart</h3>
+
+        <table id="cart">
+          <caption>Checkout cart</caption>
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Unit price</th>
+              <th scope="col">Line total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Game 1</th>
+              <td>1</td>
+              <td>$xx.00</td>
+              <td>$xx.00</td>
+            </tr>
+            <tr>
+              <th scope="row">Game2</th>
+              <td>1</td>
+              <td>$yy.00</td>
+              <td>$yy.00</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="3">Total</th>
+              <td>$xx + yy.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td><button type="submit">Checkout!</button></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <h4>Sample code:</h4>
+        <code>&lt;table id="cart"&gt;<br>
+        &lt;caption&gt;Checkout cart&lt;/caption&gt;<br>
+        &lt;thead&gt;<br>
+        &lt;tr&gt;<br>
+        &lt;th scope="col"&gt;Item&lt;/th&gt;<br>
+        &lt;th scope="col"&gt;Quantity&lt;/th&gt;<br>
+        &lt;th scope="col"&gt;Unit price&lt;/th&gt;<br>
+        &lt;th scope="col"&gt;Line total&lt;/th&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/thead&gt;<br>
+        &lt;tbody&gt;<br>
+        &lt;tr&gt;<br>
+        &lt;th scope="row"&gt;Game 1&lt;/th&gt;<br>
+        &lt;td&gt;1&lt;/td&gt;<br>
+        &lt;td&gt;$xx.00&lt;/td&gt;<br>
+        &lt;td&gt;$xx.00&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt;<br>
+        &lt;th scope="row"&gt;Game2&lt;/th&gt;<br>
+        &lt;td&gt;1&lt;/td&gt;<br>
+        &lt;td&gt;$yy.00&lt;/td&gt;<br>
+        &lt;td&gt;$yy.00&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt;<br>
+        &lt;th scope="row" colspan="3"&gt;Total&lt;/th&gt;<br>
+        &lt;td&gt;$xx + yy.00&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/tbody&gt;<br>
+        &lt;tfoot&gt;<br>
+        &lt;tr&gt;<br>
+        &lt;td&gt;&lt;button type="submit"&gt;Checkout!&lt;/button&gt;&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/tfoot&gt;<br>
+        &lt;/table&gt;</code>
       </section>
 
     </section>
