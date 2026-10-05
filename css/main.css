@@ -38,23 +38,23 @@ body > section:not(#top-bar) {
 }
 
 
-#top-bar {
+#top-bar, #combined_elements nav{
   background-color: #ad2918;
-  padding: 2rem 2rem 1.25rem;
+  padding: 1.25rem 2rem;
   margin: 0;
 }
 
 #top-bar h1 {
   margin: 0;
   font-size: 2.2rem;
-  line-height: 1.2;
+  margin-top: 1.5rem;
 }
 
 
 /*Flex!*/
 /*https://www.w3schools.com/css/css3_flexbox.asp, blah blah*/
 
-#top-bar nav ul {
+#top-bar nav ul, #combined_elements nav ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -64,13 +64,13 @@ body > section:not(#top-bar) {
   padding: 0;
 }
 
-#top-bar nav li {
+#top-bar nav li, #combined_elements nav li{
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-#top-bar nav a {
+#top-bar nav a, #combined_elements nav a{
   color: #D0F0D7;
 }
 
@@ -82,13 +82,13 @@ body > section:not(#top-bar) {
 }
 
 h1{
-    margin-top: 6rem;
+    margin-top: 1.5rem;
     font-family: Futura;
     font-style: bold;
 }
 
 h2 {
-  margin-top: 6rem;
+   margin-top: 1.5rem;
   font-family: Futura;
   font-style: normal;
   font-weight: 500;
@@ -110,9 +110,21 @@ p {
   margin-top: 0;
 }
 
-nav a:hover, nav a:focus {
+p a, ul a{
+    color: #15b3a0;
+    text-decoration: underline;
+}
+
+a:hover, a:focus, ul a:focus{
+  text-decoration: none;
+  color:#B22B16;
+}
+
+nav a:hover, nav a:focus{
   text-decoration: none;
 }
+
+
 
 code {
   background-color: #D0F0D7;
@@ -129,6 +141,14 @@ code {
   body > section:not(#top-bar) {
     padding: 0 1rem;
   }
+
+  #combined_elements nav {
+    padding: 1rem;
+  }
+
+  #combined_elements nav li:last-child {
+    margin-left: auto;
+  }
 }
 /* 
   INTERACTIVE ELEMENTS -------------------
@@ -136,20 +156,90 @@ code {
 
 
 /* Styling for the navigation button */
-.button-nav {
+.button-nav, input[type="submit" i]{
+  font-family: Intel-mono;
+  background:none;
+  border:none;
   display: inline-block;
   padding: 0.5rem;
-  color: white;
-  background-color: rgb(50,50,50);
+  color: #203331;
+  background-color: #15B3A0;
   text-decoration: none;
   transition-property: background-color; 
   transition-duration: 0.5s;
+  border-radius: 5px;
+  /*clicky clicky icon*/
+  cursor:pointer;
 }
 
-.button-nav:hover, .button-nav:focus {
-  background-color: rgb(200,200,200);
+input[type="reset" i]{
+  font-family: Intel-mono;
+  background:none;
+  border:none;
+  display: inline-block;
+  padding: 0.5rem;
+  color: #D0F0D7;
+  background-color: #B22B16;
+  text-decoration: none;
+  transition-property: background-color; 
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  /*clicky clicky icon*/
+  cursor:pointer;
 }
 
+.button-nav:hover, .button-nav:focus, input[type="submit" i]:hover, input[type="submit" i]:focus, input[type="reset" i]:hover, input[type="reset" i]:focus{
+  background-color: #D0F0D7;
+  color:#203331;
+  text-decoration: underline;
+}
+
+input[type="radio"] {
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  box-sizing: border-box;
+  border: 0.15rem solid #d0f0d7;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.575rem;
+  height: 0.575rem;
+  margin: 0.15rem;
+  border-radius: 1px;
+  background-color: #d0f0d7;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus-visible {
+  /*for the tab key selection, using outline so its not border :3*/
+  outline: 2px solid #f7f4f2;
+  outline-offset: 4px;
+}
+
+input[type="text" i], input[type="email" i], input[type="address" i], input[type="search" i] {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0.5rem;
+  border: 0.15rem solid #D0F0D7;
+  border-radius: 5px;
+  background-color: #332220;
+  color: #D0F0D7;
+}
+
+input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[type="email" i]:focus-visible, input[type="search" i]:focus-visible {
+  outline: 2px solid #15B3A0;
+  outline-offset: 2px;
+}
 
 
 
@@ -164,3 +254,88 @@ code {
 /* 
   COMBINED ELEMENTS -------------------
 */
+
+#combined_elements nav input[type="search"] {
+  width: 11rem;
+  background-color: #ad2918;
+  border-color: #D0F0D7;
+}
+
+#combined_elements nav li:nth-last-child(2) {
+  margin-left: auto;
+}
+
+#combined_elements nav label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+/*eliminate the fieldset border, because uh, it has*/
+#combined_elements nav fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Payment form layout */
+#payment {
+  max-width: 44rem;
+}
+
+#payment fieldset {
+  min-width: 0;
+  border: 1px solid #D0F0D7;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#payment legend {
+  padding: 0 0.35rem;
+  font-family: Futura, sans-serif;
+}
+
+/*I love you child selectors*/
+
+#payment > fieldset > div,
+#payment > fieldset > fieldset:last-of-type > div {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+#payment fieldset{
+  margin: 1rem 0;
+}
+
+#cart {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#cart article {
+  flex: 1 1 16rem;
+  min-width: 0;
+  border: 1px solid #D0F0D7;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#cart article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+#cart div {
+  flex: 1 1 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}

@@ -63,7 +63,7 @@
         <p>.button-nav</p>
 
         <h4>Sample code:</h4>
-        <code>&lt;a href="#" class="button"&gt;Default Button&lt;/a&gt;</code>
+        <code>&lt;a href="#" class="button-nav"&gt;Default Button&lt;/a&gt;</code>
 
         <h4>Rendered element:</h4>
         <a class="button-nav" href="#">Default Button</a>
@@ -130,7 +130,7 @@
         <p>a img</p>
 
         <h4>Sample code:</h4>
-        <code>&lt;a href="#"&gt;&lt;img src="images/sample.jpg" alt="Sample description"&gt;&lt;/a&gt;</code>
+        <code>&lt;a href="#"&gt;&lt;img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"&gt;&lt;/a&gt;</code>
 
         <h4>Rendered element:</h4>
         <a href="#"><img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"></a>
@@ -302,155 +302,157 @@
         &lt;/li&gt;<br>
         &lt;/article&gt;</code>
       </section>
-
       <section class="element">
         <h3>Payment Form</h3>
 
         
         <form id="payment">
           <fieldset>
-            <legend>payment form</legend>
+            <legend>Payment form</legend>
             <div>
               <label for="customer-name">Full name</label>
-              <input id="customer-name" name="name" type="text">
+              <input id="customer-name" name="customer-name" type="text" autocomplete="name" required>
             </div>
             <div>
               <label for="customer-email">Email address</label>
-              <input id="customer-email" name="email" type="email">
+              <input id="customer-email" name="customer-email" type="email" autocomplete="email" required>
             </div>
             <div>
               <label for="customer-address-state">State/Province</label>
-              <input id="customer-address-state" name="address" type="address">
+              <input id="customer-address-state" name="state" type="text" autocomplete="address-level1" required>
             </div>
             <div>
               <label for="customer-address-postal">Post code</label>
-              <input id="customer-address-postal" name="address" type="address">
+              <input id="customer-address-postal" name="postal-code" type="text" autocomplete="postal-code" required>
             </div>
             <fieldset>
-              <legend>Payment method</legend>
+              <legend>Card brand</legend>
               <div>
-                <input id="pay-card" name="payment-method" type="radio" value="card">
-                <label for="pay-card">Credit Card</label>
+                <input id="pay-visa" name="card-brand" type="radio" value="visa" required>
+                <label for="pay-visa">Visa</label>
               </div>
               <div>
-                <input id="pay-google" name="payment-method" type="radio" value="googlepay">
-                <label for="pay-google">Google Pay</label>
+                <input id="pay-mastercard" name="card-brand" type="radio" value="mastercard">
+                <label for="pay-mastercard">Mastercard</label>
               </div>
             </fieldset>
-            <button type="submit">Place order</button>
+            <fieldset>
+              <legend>Card details</legend>
+              <div>
+                <label for="card-number">Card number</label>
+                <input id="card-number" name="card-number" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" required>
+              </div>
+              <div>
+                <label for="card-expiry">Expiration date (MM/YY)</label>
+                <input id="card-expiry" name="card-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
+              </div>
+              <div>
+                <label for="card-cvv">Security code</label>
+                <input id="card-cvv" name="card-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+              </div>
+            </fieldset>
+            <button class="button-nav" type="button">Place order</button>
           </fieldset>
         </form>
 
 
         <h4>Sample code:</h4>
-        <code>&lt;form id="payment"&gt;<br>
+        <code>&lt;form id=&quot;payment&quot;&gt;<br>
         &lt;fieldset&gt;<br>
-        &lt;legend&gt;payment form&lt;/legend&gt;<br>
+        &lt;legend&gt;Payment form&lt;/legend&gt;<br>
         &lt;div&gt;<br>
-        &lt;label for="customer-name"&gt;Full name&lt;/label&gt;<br>
-        &lt;input id="customer-name" name="name" type="text"&gt;<br>
+        &lt;label for=&quot;customer-name&quot;&gt;Full name&lt;/label&gt;<br>
+        &lt;input id=&quot;customer-name&quot; name=&quot;customer-name&quot; type=&quot;text&quot; autocomplete=&quot;name&quot; required&gt;<br>
         &lt;/div&gt;<br>
         &lt;div&gt;<br>
-        &lt;label for="customer-email"&gt;Email address&lt;/label&gt;<br>
-        &lt;input id="customer-email" name="email" type="email"&gt;<br>
+        &lt;label for=&quot;customer-email&quot;&gt;Email address&lt;/label&gt;<br>
+        &lt;input id=&quot;customer-email&quot; name=&quot;customer-email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot; required&gt;<br>
         &lt;/div&gt;<br>
         &lt;div&gt;<br>
-        &lt;label for="customer-address-state"&gt;State/Province&lt;/label&gt;<br>
-        &lt;input id="customer-address-state" name="address" type="address"&gt;<br>
+        &lt;label for=&quot;customer-address-state&quot;&gt;State/Province&lt;/label&gt;<br>
+        &lt;input id=&quot;customer-address-state&quot; name=&quot;state&quot; type=&quot;text&quot; autocomplete=&quot;address-level1&quot; required&gt;<br>
         &lt;/div&gt;<br>
         &lt;div&gt;<br>
-        &lt;label for="customer-address-postal"&gt;Post code&lt;/label&gt;<br>
-        &lt;input id="customer-address-postal" name="address" type="address"&gt;<br>
+        &lt;label for=&quot;customer-address-postal&quot;&gt;Post code&lt;/label&gt;<br>
+        &lt;input id=&quot;customer-address-postal&quot; name=&quot;postal-code&quot; type=&quot;text&quot; autocomplete=&quot;postal-code&quot; required&gt;<br>
         &lt;/div&gt;<br>
         &lt;fieldset&gt;<br>
-        &lt;legend&gt;Payment method&lt;/legend&gt;<br>
+        &lt;legend&gt;Card brand&lt;/legend&gt;<br>
         &lt;div&gt;<br>
-        &lt;input id="pay-card" name="payment-method" type="radio" value="card"&gt;<br>
-        &lt;label for="pay-card"&gt;Credit Card&lt;/label&gt;<br>
+        &lt;input id=&quot;pay-visa&quot; name=&quot;card-brand&quot; type=&quot;radio&quot; value=&quot;visa&quot; required&gt;<br>
+        &lt;label for=&quot;pay-visa&quot;&gt;Visa&lt;/label&gt;<br>
         &lt;/div&gt;<br>
         &lt;div&gt;<br>
-        &lt;input id="pay-google" name="payment-method" type="radio" value="googlepay"&gt;<br>
-        &lt;label for="pay-google"&gt;Google Pay&lt;/label&gt;<br>
+        &lt;input id=&quot;pay-mastercard&quot; name=&quot;card-brand&quot; type=&quot;radio&quot; value=&quot;mastercard&quot;&gt;<br>
+        &lt;label for=&quot;pay-mastercard&quot;&gt;Mastercard&lt;/label&gt;<br>
         &lt;/div&gt;<br>
         &lt;/fieldset&gt;<br>
-        &lt;button type="submit"&gt;Place order&lt;/button&gt;<br>
+        &lt;fieldset&gt;<br>
+        &lt;legend&gt;Card details&lt;/legend&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for=&quot;card-number&quot;&gt;Card number&lt;/label&gt;<br>
+        &lt;input id=&quot;card-number&quot; name=&quot;card-number&quot; type=&quot;text&quot; inputmode=&quot;numeric&quot; autocomplete=&quot;cc-number&quot; maxlength=&quot;23&quot; required&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for=&quot;card-expiry&quot;&gt;Expiration date (MM/YY)&lt;/label&gt;<br>
+        &lt;input id=&quot;card-expiry&quot; name=&quot;card-expiry&quot; type=&quot;text&quot; inputmode=&quot;numeric&quot; autocomplete=&quot;cc-exp&quot; placeholder=&quot;MM/YY&quot; maxlength=&quot;5&quot; required&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div&gt;<br>
+        &lt;label for=&quot;card-cvv&quot;&gt;Security code&lt;/label&gt;<br>
+        &lt;input id=&quot;card-cvv&quot; name=&quot;card-cvv&quot; type=&quot;text&quot; inputmode=&quot;numeric&quot; autocomplete=&quot;cc-csc&quot; maxlength=&quot;4&quot; required&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;/fieldset&gt;<br>
+        &lt;button class=&quot;button-nav&quot; type=&quot;button&quot;&gt;Place order&lt;/button&gt;<br>
         &lt;/fieldset&gt;<br>
         &lt;/form&gt;</code>
       </section>
 
+
       <section class="element">
         <h3>Checkout Cart</h3>
 
-        <table id="cart">
-          <caption>Checkout cart</caption>
-          <thead>
-            <tr>
-              <th scope="col">Item</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Unit price</th>
-              <th scope="col">Line total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Game 1</th>
-              <td>1</td>
-              <td>$xx.00</td>
-              <td>$xx.00</td>
-            </tr>
-            <tr>
-              <th scope="row">Game2</th>
-              <td>1</td>
-              <td>$yy.00</td>
-              <td>$yy.00</td>
-            </tr>
-            <tr>
-              <th scope="row" colspan="3">Total</th>
-              <td>$xx + yy.00</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><button type="submit">Checkout!</button></td>
-            </tr>
-          </tfoot>
-        </table>
+        <div id="cart">
+          <article>
+            <img src="https://placehold.co/160x160" alt="Placeholder cover art for Game 1" width="160" height="160">
+            <h4>Game 1</h4>
+            <p>Quantity: 1</p>
+            <p>Unit price: $xx.00</p>
+            <p>Line total: $xx.00</p>
+          </article>
+          <article>
+            <img src="https://placehold.co/160x160" alt="Placeholder cover art for Game 2" width="160" height="160">
+            <h4>Game 2</h4>
+            <p>Quantity: 1</p>
+            <p>Unit price: $yy.00</p>
+            <p>Line total: $yy.00</p>
+          </article>
+          <div>
+            <p>Total: $xx + yy.00</p>
+            <a class="button-nav" href="#payment">Checkout!</a>
+          </div>
+        </div>
 
         <h4>Sample code:</h4>
-        <code>&lt;table id="cart"&gt;<br>
-        &lt;caption&gt;Checkout cart&lt;/caption&gt;<br>
-        &lt;thead&gt;<br>
-        &lt;tr&gt;<br>
-        &lt;th scope="col"&gt;Item&lt;/th&gt;<br>
-        &lt;th scope="col"&gt;Quantity&lt;/th&gt;<br>
-        &lt;th scope="col"&gt;Unit price&lt;/th&gt;<br>
-        &lt;th scope="col"&gt;Line total&lt;/th&gt;<br>
-        &lt;/tr&gt;<br>
-        &lt;/thead&gt;<br>
-        &lt;tbody&gt;<br>
-        &lt;tr&gt;<br>
-        &lt;th scope="row"&gt;Game 1&lt;/th&gt;<br>
-        &lt;td&gt;1&lt;/td&gt;<br>
-        &lt;td&gt;$xx.00&lt;/td&gt;<br>
-        &lt;td&gt;$xx.00&lt;/td&gt;<br>
-        &lt;/tr&gt;<br>
-        &lt;tr&gt;<br>
-        &lt;th scope="row"&gt;Game2&lt;/th&gt;<br>
-        &lt;td&gt;1&lt;/td&gt;<br>
-        &lt;td&gt;$yy.00&lt;/td&gt;<br>
-        &lt;td&gt;$yy.00&lt;/td&gt;<br>
-        &lt;/tr&gt;<br>
-        &lt;tr&gt;<br>
-        &lt;th scope="row" colspan="3"&gt;Total&lt;/th&gt;<br>
-        &lt;td&gt;$xx + yy.00&lt;/td&gt;<br>
-        &lt;/tr&gt;<br>
-        &lt;/tbody&gt;<br>
-        &lt;tfoot&gt;<br>
-        &lt;tr&gt;<br>
-        &lt;td&gt;&lt;button type="submit"&gt;Checkout!&lt;/button&gt;&lt;/td&gt;<br>
-        &lt;/tr&gt;<br>
-        &lt;/tfoot&gt;<br>
-        &lt;/table&gt;</code>
+        <code>&lt;div id=&quot;cart&quot;&gt;<br>
+        &lt;article&gt;<br>
+        &lt;img src=&quot;https://placehold.co/160x160&quot; alt=&quot;Placeholder cover art for Game 1&quot; width=&quot;160&quot; height=&quot;160&quot;&gt;<br>
+        &lt;h4&gt;Game 1&lt;/h4&gt;<br>
+        &lt;p&gt;Quantity: 1&lt;/p&gt;<br>
+        &lt;p&gt;Unit price: $xx.00&lt;/p&gt;<br>
+        &lt;p&gt;Line total: $xx.00&lt;/p&gt;<br>
+        &lt;/article&gt;<br>
+        &lt;article&gt;<br>
+        &lt;img src=&quot;https://placehold.co/160x160&quot; alt=&quot;Placeholder cover art for Game 2&quot; width=&quot;160&quot; height=&quot;160&quot;&gt;<br>
+        &lt;h4&gt;Game 2&lt;/h4&gt;<br>
+        &lt;p&gt;Quantity: 1&lt;/p&gt;<br>
+        &lt;p&gt;Unit price: $yy.00&lt;/p&gt;<br>
+        &lt;p&gt;Line total: $yy.00&lt;/p&gt;<br>
+        &lt;/article&gt;<br>
+        &lt;div&gt;<br>
+        &lt;p&gt;Total: $xx + yy.00&lt;/p&gt;<br>
+        &lt;a class=&quot;button-nav&quot; href=&quot;#payment&quot;&gt;Checkout!&lt;/a&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;/div&gt;</code>
       </section>
 
     </section>
