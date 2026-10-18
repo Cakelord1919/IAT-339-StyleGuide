@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - P01 Style Guide</title>
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Site navigation: same markup as the Main Navigation in the style guide -->
+    <header>
+      <section id="top-bar" class="shop-nav">
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html"><img src="./img/GS_Logo.png" alt="Style guide home" width="50" height="50"></a></li>
+            <li><a href="index.html">Style Guide</a></li>
+            <li><a href="product_listing.html">Games</a></li>
+            <li><a href="index.html#branding">About Us</a></li>
+            <li><a href="index.html#citations">Citations</a></li>
+            <li>
+              <fieldset>
+                <label>
+                  Search:
+                  <input type="search" id="search" placeholder="Search">
+                </label>
+              </fieldset>
+            </li>
+            <li><a href="checkout.html"><img src="./img/linecart.png" alt="Cart" width="50" height="50"></a></li>
+          </ul>
+        </nav>
+        <h1>Checkout</h1>
+      </section>
+    </header>
+
+    <!-- Cart + payment form: stacked on small screens, side by side on wide ones -->
+    <section id="checkout">
+      <div class="checkout-layout">
+
+        <section aria-labelledby="cart-heading">
+          <h2 id="cart-heading">Your cart</h2>
+          <div id="cart">
+            <article>
+              <img src="./img/Celeste.png" alt="Cover art for Celeste" width="160" height="160">
+              <h4>Celeste</h4>
+              <p>Quantity: 1</p>
+              <p>Unit price: <data value="19.99">$19.99</data></p>
+              <p>Line total: <data value="19.99">$19.99</data></p>
+            </article>
+            <article>
+              <img src="./img/HollowKnight.png" alt="Cover art for Hollow Knight" width="160" height="160">
+              <h4>Hollow Knight</h4>
+              <p>Quantity: 1</p>
+              <p>Unit price: <data value="14.99">$14.99</data></p>
+              <p>Line total: <data value="14.99">$14.99</data></p>
+            </article>
+            <div class="cart-total">
+              <p>Total <data class="total-amount" value="34.98">$34.98</data></p>
+              <a class="button-nav" href="#payment">Checkout!</a>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="payment-heading">
+          <h2 id="payment-heading">Payment</h2>
+          <form id="payment" action="#">
+            <fieldset>
+              <legend>Payment form</legend>
+              <div>
+                <label for="customer-name">Full name</label>
+                <input id="customer-name" name="customer-name" type="text" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="customer-email">Email address</label>
+                <input id="customer-email" name="customer-email" type="email" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="customer-address-state">State/Province</label>
+                <input id="customer-address-state" name="state" type="text" autocomplete="address-level1" required>
+              </div>
+              <div>
+                <label for="customer-address-postal">Post code</label>
+                <input id="customer-address-postal" name="postal-code" type="text" autocomplete="postal-code" required>
+              </div>
+              <fieldset>
+                <legend>Card brand</legend>
+                <div>
+                  <input id="pay-visa" name="card-brand" type="radio" value="visa" required>
+                  <label for="pay-visa">Visa</label>
+                </div>
+                <div>
+                  <input id="pay-mastercard" name="card-brand" type="radio" value="mastercard">
+                  <label for="pay-mastercard">Mastercard</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Card details</legend>
+                <div>
+                  <label for="card-number">Card number</label>
+                  <input id="card-number" name="card-number" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" required>
+                </div>
+                <div>
+                  <label for="card-expiry">Expiration date (MM/YY)</label>
+                  <input id="card-expiry" name="card-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div>
+                  <label for="card-cvv">Security code</label>
+                  <input id="card-cvv" name="card-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+                </div>
+              </fieldset>
+              <button class="button-nav" type="submit">Place order</button>
+            </fieldset>
+          </form>
+        </section>
+
+      </div>
+    </section>
+
+  </body>
+</html>
