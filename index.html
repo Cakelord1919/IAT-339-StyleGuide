@@ -24,7 +24,7 @@
         <li><a href="#interactive_elements">Interactive Elements</a></li>
         <li><a href="#text_elements">Text Elements</a></li>
         <li><a href="#combined_elements">Combined Elements</a></li>
-        <li><a href="product_listing.html">Product Listing Template</a></li>
+        <li><a href="gamelist.html">Product Listing Template</a></li>
         <li><a href="checkout.html">Checkout Template</a></li>
         <li><a href="#citations">Citations</a></li>
         </ul>
@@ -246,63 +246,82 @@
       <section class="element">
         <h3>Product/game Listing</h3>
 
-        <article id="games">
-          <li>
-          <h4 id="game-name">Celeste</h4>
-          <h5 id="brief-description">Description</h5>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          </p>
-          <a href="#game-details">
-          <img src="./img/Celeste.png" alt="Celeste" width="100" height="100">
-          </a>
-          <p>Price: <data value="100.00">$100.00</data></p>
-          <p><a href="#game-details">See game details.</a></p>
-          </li>
-          <li>
-          <h4 id="game-name">Hollow Knight</h4>
-          <h5 id="brief-description">Description</h5>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          </p>
-          <a href="#game-details">
-            <img src="./img/HollowKnight.png" alt="Hollow Knight" width="100" height="100">
-          </a>
-          <p>Price: <data value="100.00">$100.00</data></p>
-          <p><a href="#game-details">See game details.</a></p>
-          </li>
-
-        </article>
-
+        <section id="games">
+          <article class="game-card">
+            <a class="game-cover" href="#game-details">
+              <img src="./img/Celeste.png" alt="Celeste cover art" width="316" height="316">
+            </a>
+            <div class="game-content">
+              <h4>Celeste</h4>
+              <p class="game-description">Climb a mountain in a precise pixel-art platforming adventure.</p>
+              <div class="game-selection">
+                <input type="checkbox" id="select-celeste" name="selected-games" value="celeste">
+                <label for="select-celeste">Select Celeste</label>
+              </div>
+              <div class="game-footer">
+                <p class="game-price">Price: <data value="100.00">$100.00</data></p>
+                <a class="button-nav" href="#game-details">See game details</a>
+              </div>
+            </div>
+          </article>
+          <article class="game-card">
+            <a class="game-cover" href="#game-details">
+              <img src="./img/HollowKnight.png" alt="Hollow Knight cover art" width="316" height="316">
+            </a>
+            <div class="game-content">
+              <h4>Hollow Knight</h4>
+              <p class="game-description">Explore a hand-drawn underground kingdom filled with secrets and challenging battles.</p>
+              <div class="game-selection">
+                <input type="checkbox" id="select-hollow-knight" name="selected-games" value="hollow-knight">
+                <label for="select-hollow-knight">Select Hollow Knight</label>
+              </div>
+              <div class="game-footer">
+                <p class="game-price">Price: <data value="100.00">$100.00</data></p>
+                <a class="button-nav" href="#game-details">See game details</a>
+              </div>
+            </div>
+          </article>
+        </section>
 
         <h4>Sample code:</h4>
-        <code>&lt;article id="games"&gt;<br>
-        &lt;li&gt;<br>
-        &lt;h4 id="game-name"&gt;Game 1&lt;/h4&gt;<br>
-        &lt;h5 id="brief-description"&gt;Description&lt;/h5&gt;<br>
-        &lt;p&gt;<br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
-        &lt;/p&gt;<br>
-        &lt;a href="#game-details"&gt;<br>
-        &lt;img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"&gt;<br>
-        &lt;/a&gt;<br>
-        &lt;p&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;<br>
-        &lt;p&gt;&lt;a href="#game-details"&gt;See game details.&lt;/a&gt;&lt;/p&gt;<br>
-        &lt;/li&gt;<br>
-        &lt;li&gt;<br>
-        &lt;h4 id="game-name"&gt;Game 2&lt;/h4&gt;<br>
-        &lt;h5 id="brief-description"&gt;Description&lt;/h5&gt;<br>
-        &lt;p&gt;<br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
-        &lt;/p&gt;<br>
-        &lt;a href="#game-details"&gt;<br>
-        &lt;img src="https://placehold.co/100x100" alt="Sample description" width="100" height="100"&gt;<br>
-        &lt;/a&gt;<br>
-        &lt;p&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;<br>
-        &lt;p&gt;&lt;a href="#game-details"&gt;See game details.&lt;/a&gt;&lt;/p&gt;<br>
-        &lt;/li&gt;<br>
-        &lt;/article&gt;</code>
+        <pre class="game-listing-code"><code>&lt;section id="games"&gt;
+  &lt;article class="game-card"&gt;
+    &lt;a class="game-cover" href="#game-details"&gt;
+      &lt;img src="./img/Celeste.png" alt="Celeste cover art" width="316" height="316"&gt;
+    &lt;/a&gt;
+    &lt;div class="game-content"&gt;
+      &lt;h4&gt;Celeste&lt;/h4&gt;
+      &lt;p class="game-description"&gt;Climb a mountain in a precise pixel-art platforming adventure.&lt;/p&gt;
+      &lt;div class="game-selection"&gt;
+        &lt;input type="checkbox" id="select-celeste" name="selected-games" value="celeste"&gt;
+        &lt;label for="select-celeste"&gt;Select Celeste&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="game-footer"&gt;
+        &lt;p class="game-price"&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;
+        &lt;a class="button-nav" href="#game-details"&gt;See game details&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="game-card"&gt;
+    &lt;a class="game-cover" href="#game-details"&gt;
+      &lt;img src="./img/HollowKnight.png" alt="Hollow Knight cover art" width="316" height="316"&gt;
+    &lt;/a&gt;
+    &lt;div class="game-content"&gt;
+      &lt;h4&gt;Hollow Knight&lt;/h4&gt;
+      &lt;p class="game-description"&gt;Explore a hand-drawn underground kingdom filled with secrets and challenging battles.&lt;/p&gt;
+      &lt;div class="game-selection"&gt;
+        &lt;input type="checkbox" id="select-hollow-knight" name="selected-games" value="hollow-knight"&gt;
+        &lt;label for="select-hollow-knight"&gt;Select Hollow Knight&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="game-footer"&gt;
+        &lt;p class="game-price"&gt;Price: &lt;data value="100.00"&gt;$100.00&lt;/data&gt;&lt;/p&gt;
+        &lt;a class="button-nav" href="#game-details"&gt;See game details&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
       </section>
+
       <section class="element">
         <h3>Payment Form</h3>
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - P01 Style Guide</title>
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <section id="top-bar" class="shop-nav">
+        <nav>
+          <ul>
+            <li><a href="index.html"><img src="./img/GS_Logo.png" alt="Style guide home" width="50" height="50"></a></li>
+            <li><a href="index.html">Style Guide</a></li>
+            <li><a href="gamelist.html">Games</a></li>
+            <li><a href="index.html#branding">About Us</a></li>
+            <li><a href="index.html#citations">Citations</a></li>
+            <li>
+              <fieldset>
+                <label>
+                  Search:
+                  <input type="search" id="search" placeholder="Search">
+                </label>
+              </fieldset>
+            </li>
+            <li><a href="checkout.html"><img src="./img/linecart.png" alt="Cart" width="50" height="50"></a></li>
+          </ul>
+        </nav>
+        <h1>Games</h1>
+      </section>
+    </header>
+
+    <main class="game-listing-layout">
+      <h2>Featured games</h2>
+      <p>Explore our games and select the ones you want.</p>
+
+      <section id="games">
+        <article class="game-card">
+          <a class="game-cover" href="#game-details">
+            <img src="./img/Celeste.png" alt="Celeste cover art" width="316" height="316">
+          </a>
+          <div class="game-content">
+            <h4>Celeste</h4>
+            <p class="game-description">Climb a mountain in a precise pixel-art platforming adventure.</p>
+            <div class="game-selection">
+              <input type="checkbox" id="select-celeste" name="selected-games" value="celeste">
+              <label for="select-celeste">Select Celeste</label>
+            </div>
+            <div class="game-footer">
+              <p class="game-price">Price: <data value="19.99">$19.99</data></p>
+              <a class="button-nav" href="#game-details">See game details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <a class="game-cover" href="#game-details">
+            <img src="./img/HollowKnight.png" alt="Hollow Knight cover art" width="316" height="316">
+          </a>
+          <div class="game-content">
+            <h4>Hollow Knight</h4>
+            <p class="game-description">Explore a hand-drawn underground kingdom filled with secrets and challenging battles.</p>
+            <div class="game-selection">
+              <input type="checkbox" id="select-hollow-knight" name="selected-games" value="hollow-knight">
+              <label for="select-hollow-knight">Select Hollow Knight</label>
+            </div>
+            <div class="game-footer">
+              <p class="game-price">Price: <data value="14.99">$14.99</data></p>
+              <a class="button-nav" href="#game-details">See game details</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="game-listing-checkout">
+        <p>Ready to checkout?</p>
+        <a class="button-nav" href="checkout.html">Checkout!</a>
+      </div>
+    </main>
+  </body>
+</html>

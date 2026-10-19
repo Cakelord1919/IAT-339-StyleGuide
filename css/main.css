@@ -74,7 +74,7 @@ body > section:not(#top-bar) {
   color: #D0F0D7;
 }
 
-.element {
+#game-list {
   padding-bottom: 2rem;
   border-top-width: 0.15rem;
   border-top-style: solid;
@@ -194,7 +194,9 @@ input[type="reset" i]{
   text-decoration: underline;
 }
 
-input[type="radio"] {
+
+input[type="radio"],
+#games input[type="checkbox"] {
   appearance: none;
   display: inline-grid;
   place-content: center;
@@ -205,7 +207,8 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-input[type="radio"]::before {
+input[type="radio"]::before,
+#games input[type="checkbox"]::before {
   content: "";
   width: 0.575rem;
   height: 0.575rem;
@@ -216,11 +219,13 @@ input[type="radio"]::before {
   transition: transform 0.15s ease;
 }
 
-input[type="radio"]:checked::before {
+input[type="radio"]:checked::before,
+#games input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
-input[type="radio"]:focus-visible {
+input[type="radio"]:focus-visible,
+#games input[type="checkbox"]:focus-visible {
   /*for the tab key selection, using outline so its not border :3*/
   outline: 2px solid #f7f4f2;
   outline-offset: 4px;
@@ -240,7 +245,6 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   outline: 2px solid #15B3A0;
   outline-offset: 2px;
 }
-
 
 
 
@@ -270,6 +274,76 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
+}
+
+/* Game listing component: shared by index.html and gamelist.html. */
+#games {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 64rem;
+}
+
+#games .game-card {
+  display: flex;
+  flex: 1 1 19rem;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #D0F0D7;
+  border-radius: 5px;
+  background-color: #46302c;
+}
+
+#games .game-cover {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: #291c1a;
+}
+
+#games .game-cover img {
+  width: min(100%, 12rem);
+  height: auto;
+  border-radius: 5px;
+}
+
+#games .game-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+#games .game-description {
+  line-height: 1.5;
+}
+
+#games .game-selection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+#games .game-selection label {
+  cursor: pointer;
+}
+
+#games .game-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #D0F0D7;
+}
+
+#games .game-price {
+  font-family: Futura, sans-serif;
+  font-size: 1.25rem;
 }
 
 /*eliminate the fieldset border, because uh, it has*/
@@ -425,4 +499,42 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
 #cart .cart-total .button-nav {
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
+}
+
+/* Layout used only by gamelist template responsive. */
+.game-listing-layout {
+  box-sizing: border-box;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
+}
+
+.game-listing-checkout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 0.15rem solid #15B3A0;
+  border-radius: 5px;
+  background-color: #46302c;
+}
+
+.game-listing-checkout p {
+  margin: 0;
+  font-family: Futura, sans-serif;
+  font-size: 1.5rem;
+}
+
+.game-listing-checkout .button-nav {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .game-listing-layout {
+    padding: 1rem 1rem 2rem;
+  }
 }
