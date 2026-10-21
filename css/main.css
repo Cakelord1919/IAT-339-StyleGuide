@@ -276,6 +276,24 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   white-space: nowrap;
 }
 
+/* Image links shared by the interactive example and game listing. */
+.game-cover {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.game-cover img {
+  display: block;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+
+.game-cover:hover img,
+.game-cover:focus-visible img {
+  transform: scale(1.05);
+  opacity: 0.78;
+  filter: contrast(0.85);
+}
+
 /* Game listing component: shared by index.html and gamelist.html. */
 #games {
   display: flex;
@@ -290,20 +308,23 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid #D0F0D7;
   border-radius: 5px;
-  background-color: #46302c;
+}
+
+#games .game-card a{
+  text-decoration: none;
+  color: #D0F0D7;
 }
 
 #games .game-cover {
-  display: flex;
-  justify-content: center;
+  display: block;
   padding: 1.25rem;
   background-color: #291c1a;
 }
 
 #games .game-cover img {
-  width: min(100%, 12rem);
+  width:100%;
+  object-fit: fill;
   height: auto;
   border-radius: 5px;
 }
@@ -313,22 +334,6 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   flex: 1;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1.25rem;
-}
-
-#games .game-description {
-  line-height: 1.5;
-}
-
-#games .game-selection {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: auto;
-}
-
-#games .game-selection label {
-  cursor: pointer;
 }
 
 #games .game-footer {
