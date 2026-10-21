@@ -650,3 +650,22 @@ input[type="search"]::placeholder {
     font-size: 0.9rem;
   }
 }
+
+
+/* "Add to cart" button on the game cards. Built on .button-nav so it matches
+   the site's other buttons; this only adds a button-specific font size
+   (<button> doesn't inherit one), a roomier tap target, and a pressed state. */
+#games .button-add {
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+}
+
+#games .button-add:active {
+  transform: translateY(1px);
+}
+
+#games .button-add:focus-visible {
+  outline: 2px solid #D0F0D7;
+  outline-offset: 3px;
+}
