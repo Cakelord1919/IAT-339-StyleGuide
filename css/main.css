@@ -336,6 +336,10 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
   gap: 0.75rem;
 }
 
+#games .game-description {
+  line-height: 1.5;
+}
+
 #games .game-footer {
   display: flex;
   flex-wrap: wrap;
@@ -649,58 +653,31 @@ input[type="search"]::placeholder {
   }
 }
 
-#games .button-add {
-  font-size: 1rem;
-  padding: 0.6rem 1rem;
-  white-space: nowrap;
+/* Standalone game detail pages. */
+.game-detail-layout {
+  box-sizing: border-box;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
 }
 
-#games .button-add:active {
-  transform: translateY(1px);
+.game-detail-layout > p a {
+  color: #D0F0D7;
 }
 
-#games .button-add:focus-visible {
-  outline: 2px solid #D0F0D7;
-  outline-offset: 3px;
-}
-
-/* 
-  GAME DETAILS POP-UP -------------------
-*/
-
-/* Uses the native <dialog> element: showModal() darkens the page through
-   ::backdrop, traps focus and closes on Esc without extra JavaScript.
-   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog */
-.game-dialog {
-  width: min(64rem, calc(100% - 2rem));
-  max-height: calc(100vh - 2rem);
-  padding: 0;
+.game-detail {
+  overflow: hidden;
   border: 1px solid rgba(208, 240, 215, 0.25);
   border-radius: 8px;
-  background-color: #332220;
-  color: #D0F0D7;
-  font-family: Futura, sans-serif;
-  font-weight: 500;
-  overflow: auto;
 }
 
-.game-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
-/* Stop the page behind the pop-up from scrolling. */
-body:has(dialog[open]) {
-  overflow: hidden;
-}
-
-.dialog-banner {
-  position: relative;
-  padding: 2rem 4rem 1.5rem 2rem;
+.game-detail-banner {
+  padding: 2rem;
   background-color: #B22B16;
   color: #fff;
 }
 
-.dialog-banner h2 {
+.game-detail-banner h1 {
   margin: 0;
   font-size: clamp(2.25rem, 7vw, 4rem);
   font-weight: 700;
@@ -708,72 +685,56 @@ body:has(dialog[open]) {
   text-transform: uppercase;
 }
 
-.dialog-banner p {
+.game-detail-banner p {
   margin: 0.75rem 0 0;
   font-size: 1.25rem;
 }
 
-.dialog-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 0;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.dialog-close:hover,
-.dialog-close:focus-visible {
-  background-color: #D0F0D7;
-  color: #332220;
-}
-
-.dialog-body {
+.game-detail-body {
   padding: 2rem;
 }
 
-/* Big game art inside the pop-up: fills the full width of the content area
-   (the body padding keeps the side margins) and keeps its proportions. */
-.dialog-art {
+.game-detail-art {
   display: block;
+  object-fit: cover;
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-/* On phones the <picture> above swaps in the small square cover (one image
-   is loaded, not both), so keep it from stretching past its 316px size.
-   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture */
 @media (max-width: 47.99rem) {
-  .dialog-art {
+  .game-detail-layout {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .game-detail-body {
+    padding: 1rem;
+  }
+
+  .game-detail-art {
+    object-fit: cover;
     max-width: 20rem;
     aspect-ratio: 1 / 1;
   }
 }
 
-.dialog-summary {
+.game-detail-summary {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 
-.dialog-info p {
+.game-detail-info p {
   max-width: 65ch;
 }
 
-.dialog-info {
+.game-detail-info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.dialog-info p {
+.game-detail-info p {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.5;
@@ -795,7 +756,7 @@ body:has(dialog[open]) {
   font-size: 1.1rem;
 }
 
-.dialog-buy {
+.game-detail-buy {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -806,21 +767,21 @@ body:has(dialog[open]) {
   border-top: 1px solid #D0F0D7;
 }
 
-.dialog-buy .game-price {
+.game-detail-buy .game-price {
   font-size: 1.75rem;
 }
 
-.dialog-buy .button-add {
+.game-detail-buy .button-nav {
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
   white-space: nowrap;
 }
 
-.dialog-about {
+.game-detail-about {
   margin-top: 2rem;
 }
 
-.dialog-about h3 {
+.game-detail-about h2 {
   margin: 0 0 1rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #D0F0D7;
@@ -828,13 +789,13 @@ body:has(dialog[open]) {
   font-style: normal;
 }
 
-.dialog-about p,
-.dialog-about li {
+.game-detail-about p,
+.game-detail-about li {
   max-width: 65ch;
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
-.dialog-about ul {
+.game-detail-about ul {
   padding-left: 1.25rem;
 }
