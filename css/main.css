@@ -194,6 +194,21 @@ input[type="reset" i]{
   text-decoration: underline;
 }
 
+/* Outlined button used by the Hero Landing component. */
+.button-nav.button-hero {
+  padding: 0.7rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 0;
+  background-color: rgba(51, 34, 32, 0.2);
+  color: #fff;
+}
+
+.button-nav.button-hero:hover,
+.button-nav.button-hero:focus-visible {
+  background-color: #fff;
+  color: #332220;
+}
+
 
 input[type="radio"],
 #games input[type="checkbox"] {
@@ -533,12 +548,17 @@ input[type="search"]::placeholder {
   font-size: 1.1rem;
 }
 
-/* Layout used only by gamelist template responsive. */
-.game-listing-layout {
+/* Shared page width and margins for the P2 landing and game listing pages. */
+.game-listing-layout,
+.landing-layout {
   box-sizing: border-box;
   max-width: 68rem;
   margin: 0 auto;
   padding: 1.5rem 2rem 3rem;
+}
+
+.game-listing-layout > h1 {
+  margin-top: 0;
 }
 
 .game-listing-checkout {
@@ -566,7 +586,8 @@ input[type="search"]::placeholder {
 }
 
 @media (max-width: 600px) {
-  .game-listing-layout {
+  .game-listing-layout,
+  .landing-layout {
     padding: 1rem 1rem 2rem;
   }
 }
@@ -680,7 +701,7 @@ input[type="search"]::placeholder {
 
 .game-detail-banner h1 {
   margin: 0;
-  font-size: clamp(2.25rem, 7vw, 4rem);
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
@@ -703,7 +724,107 @@ input[type="search"]::placeholder {
   border-radius: 5px;
 }
 
+
+/* Hero landing component shared by the style guide and P2 home page. */
+.hero-landing {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  min-height: 36rem;
+  overflow: hidden;
+  padding: 2.5rem;
+  background-color: #332220;
+  color: #fff;
+}
+
+.hero-landing > img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, #332220, rgba(51, 34, 32, 0.76) 40%, rgba(51, 34, 32, 0.16)),
+              linear-gradient(0deg, rgba(51, 34, 32, 0.7), transparent 60%);
+}
+
+.hero-landing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 34rem;
+}
+
+.hero-landing-content p {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.hero-landing-content .hero-landing-kicker {
+  margin-bottom: 1rem;
+  color: #D0F0D7;
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-landing h1 {
+  margin: 0 0 0.75rem;
+  font-size: 4rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-landing-content .hero-landing-subtitle {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.hero-landing-code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 @media (max-width: 47.99rem) {
+
+    .hero-landing {
+    min-height: 34rem;
+    padding: 1.25rem;
+  }
+
+  .hero-landing h1 {
+    font-size: 2.5rem;
+  }
+
+  .game-detail-banner h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-landing > img {
+    object-position: 60% center;
+  }
+
+  .hero-landing::before {
+    background: linear-gradient(0deg, #332220, rgba(51, 34, 32, 0.78) 60%, rgba(51, 34, 32, 0.25));
+  }
+  
   .game-detail-layout {
     padding: 1rem 1rem 2rem;
   }
@@ -807,19 +928,37 @@ input[type="search"]::placeholder {
   The style guide (P1) and the site (P2) share this one stylesheet. 
 */
 
-/* Full-width page with an extra left margin: clamp() grows it with the
-   window (2rem minimum, 8rem maximum). Change the last value to adjust. */
-.landing-layout {
-  padding: 2rem 2rem 3rem clamp(2rem, 8vw, 8rem);
+.about-layout {
+  box-sizing: border-box;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
+}
+
+.about-layout > h1 {
+  margin-top: 0;
+}
+
+.about-layout > section {
+  margin-top: 2rem;
+}
+
+.about-layout > section h2 {
+  margin: 0 0 1rem;
+}
+
+.about-layout > section p {
+  max-width: 65ch;
+  line-height: 1.6;
 }
 
 @media (max-width: 600px) {
-  .landing-layout {
+  .about-layout {
     padding: 1rem 1rem 2rem;
   }
 }
 
-.landing-layout > section {
+.landing-layout > section:not(:last-child) {
   margin-bottom: 3rem;
 }
 
@@ -834,7 +973,7 @@ input[type="search"]::placeholder {
 .hero h1 {
   margin: 0;
   font-family: Futura, sans-serif;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: 4.5rem;
   line-height: 1;
   text-transform: uppercase;
 }
