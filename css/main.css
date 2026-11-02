@@ -728,7 +728,6 @@ input[type="search"]::placeholder {
 /* Hero landing component shared by the style guide and P2 home page. */
 .hero-landing {
   position: relative;
-  isolation: isolate;
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
