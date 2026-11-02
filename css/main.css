@@ -343,6 +343,7 @@ input[type="text" i]:focus-visible,input[type="address" i]:focus-visible, input[
 #games .game-footer {
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
@@ -798,4 +799,113 @@ input[type="search"]::placeholder {
 
 .game-detail-about ul {
   padding-left: 1.25rem;
+}
+
+
+/* 
+  PROJECT 2: LANDING PAGE AND FOOTER -------------------
+  The style guide (P1) and the site (P2) share this one stylesheet. 
+*/
+
+/* Full-width page with an extra left margin: clamp() grows it with the
+   window (2rem minimum, 8rem maximum). Change the last value to adjust. */
+.landing-layout {
+  padding: 2rem 2rem 3rem clamp(2rem, 8vw, 8rem);
+}
+
+@media (max-width: 600px) {
+  .landing-layout {
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+.landing-layout > section {
+  margin-bottom: 3rem;
+}
+
+.landing-layout h2 {
+  margin: 0 0 1rem;
+}
+
+.hero {
+
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Futura, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 36rem;
+  margin: 1rem 0 1.5rem;
+  font-size: 1.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Secondary button: same shape as .button-nav, outlined instead of filled */
+.button-outline {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+/* Auto-fit grid: as many 16rem+ columns as fit, one column on phones.
+   https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.value-grid li {
+  padding: 1.5rem;
+  border: 1px solid rgba(208, 240, 215, 0.25);
+  border-radius: 8px;
+  background-color: #291c1a;
+}
+
+.value-grid h3 {
+  margin: 0 0 0.5rem;
+  font-style: normal;
+}
+
+.value-grid p {
+  margin: 0;
+}
+
+.cta-band {
+  padding: 2.5rem 1.5rem;
+  border-top: 0.15rem solid #D0F0D7;
+  text-align: center;
+}
+
+.site-footer {
+  padding: 2rem;
+  border-top: 0.15rem solid #D0F0D7;
+  background-color: #291c1a;
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer p {
+  margin: 0;
 }

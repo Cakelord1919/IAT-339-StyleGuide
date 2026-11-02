@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GS Studio</title>
-</head>
-<body>
-    
-</body>
+    <title>GS Studio - Indie Game Publisher</title>
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <section id="top-bar" class="shop-nav">
+        <nav>
+          <ul>
+            <li><a href="index.html"><img src="../img/GS_Logo.png" alt="GS Studio home" width="50" height="50"></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gamelist.html">Games</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li>
+              <fieldset>
+                <label>
+                  <input type="search" id="search" placeholder="Search">
+                </label>
+              </fieldset>
+            </li>
+            <li><a href="checkout.html"><img src="../img/linecart.png" alt="Cart" width="30" height="30"></a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main class="landing-layout">
+
+      <section class="hero">
+        <h1>GS Studio</h1>
+        <p>We publish the indie games worth playing, and developers keep full creative control.</p>
+
+      <section id="featured">
+        <h2>Featured games</h2>
+        <section id="games">
+        <article class="game-card">
+          <a class="game-cover" href="celeste.html">
+            <img src="../img/Celeste.png" alt="Celeste cover art" width="316" height="316">
+            <h4>Celeste</h4>
+          </a>
+          <div class="game-content">
+            <p class="game-description">Climb a mountain in a precise pixel-art platforming adventure.</p>
+            <div class="game-footer">
+              <p class="game-price">Price: <data value="19.99">$19.99</data></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <a class="game-cover" href="hollow-knight.html">
+            <img src="../img/HollowKnight.png" alt="Hollow Knight cover art" width="316" height="316">
+            <h4>Hollow Knight</h4>
+          </a>
+          <div class="game-content">
+            <p class="game-description">Explore a hand-drawn underground kingdom filled with secrets and challenging battles.</p>
+            <div class="game-footer">
+              <p class="game-price">Price: <data value="14.99">$14.99</data></p>
+            </div>
+          </div>
+        </article>
+        </section>
+      </section>
+
+      <section class="cta-band">
+        <h2>Find your next favourite game</h2>
+        <a class="button-nav" href="gamelist.html">See all games</a>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <ul>
+        <li><a href="https://github.com/Cakelord1919/IAT-339-StyleGuide" target="_blank" rel="noopener">GitHub repo</a></li>
+        <li><a href="../P1/index.html">Style guide (Project 1)</a></li>
+        <li><a href="../P1/index.html#citations">Citations</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>
